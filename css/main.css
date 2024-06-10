@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* Assignment 1 | COMP1073 Client-Side JavaScript */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  header {
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+  }
+  
+  button {
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  button#subjectButton {
+    background-color: purple;
+  }
+  
+  button#verbButton {
+    background-color: lightblue;
+  }
+  
+  button#adjectiveButton {
+    background-color: green;
+  }
+  
+  button#objectButton {
+    background-color: orange;
+  }
+  
+  button#placeButton {
+    background-color: pink;
+  }
+  
+  button#speakButton {
+    background-color: navy;
+  }
+  
+  button + button {
+    margin-left: 10px;
+  }
+  
+  footer {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.8em;
+  }
