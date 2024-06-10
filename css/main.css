@@ -5,27 +5,27 @@ body {
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
-  }
+}
   
-  .container {
+.container {
     max-width: 600px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-  }
+}
   
-  header {
+header {
     margin-bottom: 20px;
-  }
+}
   
-  h1 {
+h1 {
     color: #333;
     font-size: 2.5em;
-  }
+}
   
-  button {
+button {
     color: white;
     padding: 15px 20px;
     margin: 10px;
@@ -34,38 +34,47 @@ body {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s;
-  }
+}
   
-  button#subjectButton {
+button#subjectButton {
     background-color: purple;
-  }
+}
   
-  button#verbButton {
+button#verbButton {
     background-color: lightblue;
-  }
+}
   
-  button#adjectiveButton {
+button#adjectiveButton {
     background-color: green;
-  }
+}
   
-  button#objectButton {
+button#objectButton {
     background-color: orange;
-  }
+}
   
-  button#placeButton {
+button#placeButton {
     background-color: pink;
-  }
+}
   
-  button#speakButton {
+button#speakButton {
     background-color: navy;
-  }
+}
   
-  button + button {
+button#generateButton {
+    background-color: red;
+}
+  
+button#resetButton {
+    background-color: black;
+    color: white;
+}
+  
+button + button {
     margin-left: 10px;
-  }
+}
   
-  footer {
+footer {
     margin-top: 20px;
     color: #666;
     font-size: 0.8em;
-  }
+}

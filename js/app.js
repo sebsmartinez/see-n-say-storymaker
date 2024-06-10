@@ -21,46 +21,72 @@ var adjectiveButton = document.getElementById("adjectiveButton");
 var objectButton = document.getElementById("objectButton");
 var placeButton = document.getElementById("placeButton");
 var speakButton = document.getElementById("speakButton");
+var generateButton = document.getElementById("generateButton"); // New button
+var resetButton = document.getElementById("resetButton"); // New button
 
-/* Functions
--------------------------------------------------- */
-function speakNow(string) {
+// Function to pick a random word from an array
+function getRandomWord(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+// Function to generate a random story
+function generateStory() {
+    textToSpeak = ''; // Clear previous content
+    const subject = getRandomWord(subjects);
+    const verb = getRandomWord(verbs);
+    const adjective = getRandomWord(adjectives);
+    const object = getRandomWord(objects);
+    const place = getRandomWord(places);
+    textToSpeak = `${subject} ${verb} ${adjective} ${object} ${place}.`;
+}
+
+// Function to speak the current textToSpeak content
+function speakNow() {
     // Create a new speech object, attaching the string of text to speak
-    var utterThis = new SpeechSynthesisUtterance(string);
+    var utterThis = new SpeechSynthesisUtterance(textToSpeak);
     // Actually speak the text
     synth.speak(utterThis);
 }
 
 /* Event Listeners
 -------------------------------------------------- */
-// Onclick handler for the buttons that build the textToSpeak string
+// Onclick handlers for the buttons that build the textToSpeak string
 subjectButton.onclick = function() {
-    const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+    const randomSubject = getRandomWord(subjects);
     textToSpeak += randomSubject + " ";
 };
 
 verbButton.onclick = function() {
-    const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+    const randomVerb = getRandomWord(verbs);
     textToSpeak += randomVerb + " ";
 };
 
 adjectiveButton.onclick = function() {
-    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const randomAdjective = getRandomWord(adjectives);
     textToSpeak += randomAdjective + " ";
 };
 
 objectButton.onclick = function() {
-    const randomObject = objects[Math.floor(Math.random() * objects.length)];
+    const randomObject = getRandomWord(objects);
     textToSpeak += randomObject + " ";
 };
 
 placeButton.onclick = function() {
-    const randomPlace = places[Math.floor(Math.random() * places.length)];
+    const randomPlace = getRandomWord(places);
     textToSpeak += randomPlace + " ";
 };
 
-// Onclick handler for the button that speaks the text contained in the above var textToSpeak
+// Onclick handler for the button that speaks the text contained in textToSpeak
 speakButton.onclick = function() {
-    speakNow(textToSpeak);
-    textToSpeak = ''; // Reset the string after speaking
-}
+    speakNow();
+};
+
+// Onclick handler for the button that generates a random story
+generateButton.onclick = function() {
+    generateStory();
+};
+
+// Onclick handler for the button that resets the textToSpeak content
+resetButton.onclick = function() {
+    textToSpeak = ''; // Reset the string
+};
